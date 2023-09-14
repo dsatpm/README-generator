@@ -1,4 +1,4 @@
-import inquirer from "inquirer";
+import inquirer from 'inquirer';
 import fs from 'fs';
 
 inquirer
@@ -12,13 +12,22 @@ inquirer
 		{
 			type: 'input',
 			name: 'description',
-			message: 'What technologies were used on this project, and describe what your application does.',
+			message:
+				'What technologies were used on this project, and describe what your application does.',
 		},
 
 		{
 			type: 'input',
 			name: 'installation',
-			message: 'Are there installation requirements for this project? If no, put N/A.',
+			message:
+				'Are there installation requirements for this project? If no, put N/A.',
+		},
+
+		{
+			type: 'list',
+			name: 'license',
+			message: 'What license(s) did you use with this project?',
+			choices: ['MIT License', 'Unlicense', 'GNU General Public License', 'Apache License', 'Eclipse Public License', 'BSD3 License', 'Mozilla Public License'],
 		},
 
 		{
@@ -29,14 +38,8 @@ inquirer
 
 		{
 			type: 'input',
-			name: 'license',
-			message: 'Did you use a license for this project? If no, put N/A.',
-		},
-
-		{
-			type: 'input',
 			name: 'tests',
-			message: 'What kinds of tests have you ran?'
+			message: 'What kinds of tests have you ran?',
 		},
 
 		{
@@ -54,21 +57,36 @@ inquirer
 		{
 			type: 'input',
 			name: 'questions',
-			message: 'Enter your Github username: '
+			message: 'Enter your Github username: ',
+			validate(value) {
+				const pass = value.match(/^[A-Za-z0-9_-]+$/,
+				);
+				if (pass) {
+					return true;
+				}
+				return 'Please enter a valid username.';
+			},
 		},
 
 		{
 			type: 'input',
 			name: 'email',
 			message: 'Enter your email address: ',
+			validate(value) {
+				const verified = value.match(/^[A-Za-z0-9_@.-]+$/,
+				);
+				if (verified) {
+					return true;
+				}
+				return 'Please enter a valid email address.'
+			}
 		},
-
 	])
 	.then((answers) => {
 		let title = answers.title;
 		let description = answers.description;
 		let installation = answers.installation;
-		let license = answers.license;
+		let licenseName = answers.license;
 		let tests = answers.tests;
 		let usage = answers.usage;
 		let credits = answers.credits;
@@ -77,6 +95,56 @@ inquirer
 		let email = answers.email;
 
 		console.log('Answers: ', answers);
+
+		const licenses = [
+			{
+				name: 'MIT License',
+				badge: 'https://img.shields.io/badge/License-MIT-yellow.svg',
+				description: 'https://opensource.org/licenses/MIT',
+			},
+	
+			{
+				name: 'Unlicense',
+				badge: 'https://img.shields.io/badge/license-Unlicense-blue.svg',
+				description: 'http://unlicense.org/',
+			},
+	
+			{
+				name: 'GNU General Public License',
+				badge: 'https://img.shields.io/badge/License-GPLv3-blue.svg',
+				description: 'https://www.gnu.org/licenses/gpl-3.0',
+			},
+	
+			{
+				name: 'Apache License',
+				badge: 'https://img.shields.io/badge/License-Apache_2.0-blue.svg',
+				description: 'https://opensource.org/licenses/Apache-2.0',
+			},
+	
+			{
+				name: 'Eclipse Public License',
+				badge: 'https://img.shields.io/badge/License-EPL_1.0-red.svg',
+				description: 'https://opensource.org/licenses/EPL-1.0',
+			},
+	
+			{
+				name: 'BSD3 License',
+				badge: 'https://img.shields.io/badge/License-BSD_3--Clause-blue.svg',
+				description: 'https://opensource.org/licenses/BSD-3-Clause',
+			},
+	
+			{
+			name: 'Mozilla Public License',
+			badge: 'https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg',
+			description: 'https://opensource.org/licenses/MPL-2.0',
+			},
+	
+		];
+
+		let chosenLicense = licenses.find((license) => license.name === licenseName);
+
+		let badge = chosenLicense.badge;
+		let licenseDescription = chosenLicense.description;
 
 		let makeHtmlFile = `
 		<!DOCTYPE html>
@@ -128,6 +196,10 @@ inquirer
 	a {
 		text-decoration: none;
 	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 	
 	pre {
 		width: 80%;
@@ -137,7 +209,7 @@ inquirer
 	.grid {
 		display: grid;
 		grid-template-columns: 1fr 4fr 4fr;
-		grid-template-rows: 2fr 8fr 8fr;
+		grid-template-rows: auto;
 		grid-template-areas: 
 		'header header header'
 		'info content content'
@@ -165,7 +237,9 @@ inquirer
 	.grid-info {
 		grid-area: info;
 		background-color: var(--main-color);
+		padding-top: 14px;
 		padding-left: 14px;
+		border-bottom: 1px solid var(--text-color);
 	}
 	
 	.grid-content {
@@ -176,7 +250,7 @@ inquirer
 		background-color: var(--third-color);
 		border-left: 2px solid var(--text-color);
 		border-bottom: 2px solid var(--text-color);
-		height: 100vh;
+		height: 100%;
 	}
 	
 	.grid-content h2 {
@@ -196,6 +270,7 @@ inquirer
 		justify-content: center;
 		gap: 4px;
 		grid-area: footer;
+		padding-top: 10px;
 		background-color: var(--secondary-color);
 	}
 	
@@ -214,12 +289,12 @@ inquirer
   <div class="grid">
 
     <header class="grid-header">
-      <h1>${title}</h1>
+      <h1>${title} <img src="${badge}" alt="License Badge"></h1>
     </header>
 
     <div class="grid-info">
       <h2>Table of Contents</h2>
-      <ul class="list-items">
+      <ul>
 				<li><a href="#projectName">Project Name</a></li>
 				<li><a href="#description">Description</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -246,7 +321,8 @@ inquirer
 			</div>
 			<div id="license">
 			<h2>Licenses</h2>
-			<pre>${license}</pre>
+			<pre>${licenseName}</pre>
+			<pre>For more information on the license you chose, click <a href="${licenseDescription}">here</a></pre>
 			</div>
 			<div id="tests">
 			<h2>Tests</h2>
@@ -277,6 +353,7 @@ inquirer
   </div>
 
 	<script>
+
 	function contentHighlight(id) {
 		document.querySelectorAll('div').forEach((section) => {
 			section.classList.remove('highlighted');
@@ -301,15 +378,16 @@ inquirer
 
 </html>`;
 
-fs.writeFileSync('readme.html', makeHtmlFile);
+		fs.writeFileSync('readme.html', makeHtmlFile);
 
-console.log('readme.html file generated successfully.');
+		console.log('readme.html file generated successfully.');
 	})
 	.catch((error) => {
 		if (error.isTtyError) {
-			console.error('Prompt could not be rendered in the current environment.');
+			console.error(
+				'Prompt could not be rendered in the current environment.'
+			);
 		} else {
 			console.error('Something else went wrong: ', error);
 		}
 	});
-
