@@ -13,20 +13,24 @@ This is a program that creates a professional README in an HTML file that is cre
 ## Installation
 
 It is required to install Node.js to your machine to run this program. Here is how to do it:<br> 
+<br>
 **For MacOS - using Bash**<br>
 ```curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"```<br>
 **For MacOS - using Homebrew**<br>
 ```brew install node```<br>
+<br>
 <br>
 **For Windows - using Scoop**<br>
 ```scoop install nodejs```<br>
 *or*<br>
 ```scoop install nodejs-lts```
 <br>
+<br>
 **For Linux - Alpine**<br>
 ```apk add nodejs npm```<br>
 **Arch Linux**<br>
 ```pacman -S nodejs npm```<br>
+<br>
 <br>
 Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 - Click on the green 'Code' icon and copy the URL *or* SSH Key. Information on how to do that can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
