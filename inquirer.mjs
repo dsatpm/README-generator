@@ -5,38 +5,38 @@ inquirer
 	.prompt([
 		{
 			type: 'input',
-			name: 'projectName',
+			name: 'title',
 			message: 'What is the name of your project?',
 		},
 
 		{
 			type: 'input',
 			name: 'description',
-			message: 'How would you describe your project? For example, what technologies were used, who the project is designed for, etc.',
+			message: 'What technologies were used on this project, and describe what your application does.',
 		},
 
 		{
 			type: 'input',
 			name: 'installation',
-			message: 'Are there installation requirements for this project?',
+			message: 'Are there installation requirements for this project? If no, put N/A.',
 		},
 
 		{
 			type: 'input',
 			name: 'usage',
-			message: 'Give a brief description of how your project is intended to be used.',
+			message: 'Who would benefit from using this project?',
 		},
 
 		{
 			type: 'input',
 			name: 'license',
-			message: 'Did you use a license for this project? If no, put N/A',
+			message: 'Did you use a license for this project? If no, put N/A.',
 		},
 
 		{
 			type: 'input',
 			name: 'tests',
-			message: 'What have you used to test the functionality of your project?'
+			message: 'What kinds of tests have you ran?'
 		},
 
 		{
@@ -48,24 +48,24 @@ inquirer
 		{
 			type: 'input',
 			name: 'contributions',
-			message: 'Describe ways that people can help contribute to this project. For example, a good way to connect with you.',
+			message: 'Who can contribute to this project, and how?',
 		},
 
 		{
 			type: 'input',
 			name: 'questions',
-			message: 'Enter your Github username'
+			message: 'Enter your Github username: '
 		},
 
 		{
 			type: 'input',
 			name: 'email',
-			message: 'Enter your email address',
+			message: 'Enter your email address: ',
 		},
 
 	])
 	.then((answers) => {
-		let projectName = answers.projectName;
+		let title = answers.title;
 		let description = answers.description;
 		let installation = answers.installation;
 		let license = answers.license;
@@ -169,10 +169,14 @@ inquirer
 	}
 	
 	.grid-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
 		grid-area: content;
 		background-color: var(--third-color);
 		border-left: 2px solid var(--text-color);
 		border-bottom: 2px solid var(--text-color);
+		height: 100vh;
 	}
 	
 	.grid-content h2 {
@@ -203,14 +207,14 @@ inquirer
 		background-color: var(--secondary-color);
 	}
 	</style>
-  <title>{README} Generator</title>
+  <title>${title} - README Generator</title>
 </head>
 
 <body>
   <div class="grid">
 
     <header class="grid-header">
-      <h1>${projectName}</h1>
+      <h1>${title}</h1>
     </header>
 
     <div class="grid-info">
@@ -230,9 +234,9 @@ inquirer
     <div class="grid-content">
 			<div id="projectName">
 			<h2>Project Name</h2>
-			<pre>${projectName}</pre>
+			<pre>${title}</pre>
 			</div>
-			<div id="description>
+			<div id="description">
 			<h2>Description</h2>
 			<pre>${description}</pre>
 			</div>
@@ -274,15 +278,13 @@ inquirer
 
 	<script>
 	function contentHighlight(id) {
-		console.log('Highlighting section:', id);
-		document.querySelectorAll('h2').forEach((section) => {
+		document.querySelectorAll('div').forEach((section) => {
 			section.classList.remove('highlighted');
 		});
 	
 		const highlightedSection = document.getElementById(id);
 		if (highlightedSection) {
 			highlightedSection.classList.add('highlighted');
-			console.log('Section highlighted', id);
 		}
 	};
 	
