@@ -1,6 +1,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
+// Runs Node.js prompts with custom messages
 inquirer
 	.prompt([
 		{
@@ -58,6 +59,7 @@ inquirer
 			type: 'input',
 			name: 'questions',
 			message: 'Enter your Github username: ',
+			// Checks for valid characters in username. Throws error if parameters are not met
 			validate(value) {
 				const pass = value.match(/^[A-Za-z0-9_-]+$/,
 				);
@@ -72,6 +74,7 @@ inquirer
 			type: 'input',
 			name: 'email',
 			message: 'Enter your email address: ',
+			// Checks for valid email. Throws error if parameters are not met
 			validate(value) {
 				const verified = value.match(/^[A-Za-z0-9_@.-]+$/,
 				);
@@ -83,6 +86,7 @@ inquirer
 		},
 	])
 	.then((answers) => {
+		// variable declarations of object array
 		let title = answers.title;
 		let description = answers.description;
 		let installation = answers.installation;
@@ -96,6 +100,7 @@ inquirer
 
 		console.log('Answers: ', answers);
 
+		// Created license object array that returns images and information on license based on user selection
 		const licenses = [
 			{
 				name: 'MIT License',
@@ -141,11 +146,13 @@ inquirer
 	
 		];
 
+		// Variable declarations
 		let chosenLicense = licenses.find((license) => license.name === licenseName);
 
 		let badge = chosenLicense.badge;
 		let licenseDescription = chosenLicense.description;
 
+		// Creates HTML code that Node.js will generate upon completion of prompts that fills information user entered into prompts
 		let makeHtmlFile = `
 		<!DOCTYPE html>
 <html lang="en">
@@ -382,6 +389,7 @@ inquirer
 
 		console.log('readme.html file generated successfully.');
 	})
+	// Throws error if program is not completed within parameters
 	.catch((error) => {
 		if (error.isTtyError) {
 			console.error(
