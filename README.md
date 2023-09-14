@@ -13,21 +13,21 @@ This is a program that creates a professional README in an HTML file that is cre
 ## Installation
 
 It is required to install Node.js to your machine to run this program. Here is how to do it: 
-**For MacOS - using Bash**
-`curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"`
-**For MacOS - using Homebrew**
-`brew install node`
-
-**For Windows - using Scoop**
-`scoop install nodejs`
-*or*
-`scoop install nodejs-lts`
-
-**For Linux - Alpine**
-`apk add nodejs npm`
-**Arch Linux**
-`pacman -S nodejs npm`
-
+**For MacOS - using Bash**<br>
+```curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"```<br>
+**For MacOS - using Homebrew**<br>
+```brew install node```<br>
+<br>
+**For Windows - using Scoop**<br>
+```scoop install nodejs```<br>
+*or*<br>
+```scoop install nodejs-lts```
+<br>
+**For Linux - Alpine**<br>
+```apk add nodejs npm```<br>
+**Arch Linux**<br>
+```pacman -S nodejs npm```<br>
+<br>
 Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 - Click on the green 'Code' icon and copy the URL *or* SSH Key. Information on how to do that can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 - Once cloned, open 'readme_app' in your IDE of choice (I use [VSCode](https://code.visualstudio.com/)).
@@ -39,13 +39,17 @@ Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 ## Usage
 
 Here are some screenshots of how to navigate the program:
-
+<br>
+Start with this
+```node inquirer.mjs```<br>
 ![demo](./assets/images/readme-demo1.png)
 ![demo](./assets/images/readme-demo2.png)
 ![demo](./assets/images/readme-demo3.png)
+
+readme.html created!!!<br>
 ![demo](./assets/images/readme-demo4.png)
 
-And the finished product!
+And the finished product!<br>
 ![demo](./assets/images/readme-demo5.png)
 
 For a video of the live demo, please look [here](https://drive.google.com/file/d/1DgSio52Ks6uMFiYB8Tc56bQmKz0CbDDR/view?usp=drive_link)
