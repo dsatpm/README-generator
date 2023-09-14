@@ -23,7 +23,7 @@ It is required to install Node.js to your machine to run this program. Here is h
 **For Windows - using Scoop**<br>
 ```scoop install nodejs```<br>
 *or*<br>
-```scoop install nodejs-lts```
+```scoop install nodejs-lts```<br>
 <br>
 <br>
 **For Linux - Alpine**<br>
