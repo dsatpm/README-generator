@@ -12,7 +12,7 @@ This is a program that creates a professional README in an HTML file that is cre
 
 ## Installation
 
-It is required to install Node.js to your machine to run this program. Here is how to do it: 
+It is required to install Node.js to your machine to run this program. Here is how to do it:<br> 
 **For MacOS - using Bash**<br>
 ```curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"```<br>
 **For MacOS - using Homebrew**<br>
