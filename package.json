@@ -3,7 +3,7 @@
     "bootstrap": "^5.3.1",
     "client": "^0.0.1",
     "dayjs": "^1.11.9",
-    "inquirer": "^9.2.11",
+    "inquirer": "^8.2.4",
     "jquery": "^3.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -11,7 +11,7 @@
     "swagger-client": "^3.20.0"
   },
   "name": "readme_app",
-  "description": "",
+  "description": "This is a program that creates a professional README in an HTML file that is created entirely from Node.js. Answer the series of prompts, and your README will be generated automatically!",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

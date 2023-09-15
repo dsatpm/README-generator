@@ -1,5 +1,5 @@
-import inquirer from 'inquirer';
-import fs from 'fs';
+const inquirer = require('inquirer');
+const fs = require('fs');
 
 // Runs Node.js prompts with custom messages
 inquirer
