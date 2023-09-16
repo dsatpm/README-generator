@@ -35,11 +35,6 @@ Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 
 -   Click on the green 'Code' icon and copy the URL _or_ SSH Key. Information on how to do that can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 -   Once cloned, open 'readme_app' in your IDE of choice (I use [VSCode](https://code.visualstudio.com/)).
--   In the Terminal window, run:
-```bash
-node inquirer.mjs
-```
--   Follow the prompts and BOOM. README created.
 
 ## Usage
 
