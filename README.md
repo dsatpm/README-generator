@@ -42,7 +42,7 @@ Here are some screenshots of how to navigate the program:
 
 ### Start here
 #### Run this in your Terminal
-(The command with the `$`)
+`(The command with the $)`
 <br>
 ![demo](./assets/images/demo-ss1.png)
 
