@@ -2,47 +2,57 @@
 
 This is a program that creates a professional README in an HTML file that is created entirely from Node.js. Answer the series of prompts, and your README will be generated automatically!
 
-- I wanted to create a nice looking README generator that was very user-friendly
-- I built this project to streamline the sometimes tedious task of creating a README for a project
-- It saves tons of time for the developer!
-- I learned how to use Node.js to create a series of files
-    - Learning how to apply CSS properties was a particular challenge
-    - Also learning how to apply JavaScript functions was a challenge
-
+-   I wanted to create a nice looking README generator that was very user-friendly
+-   I built this project to streamline the sometimes tedious task of creating a README for a project
+-   It saves tons of time for the developer!
+-   I learned how to use Node.js to create a series of files
+    -   Learning how to apply CSS properties was a particular challenge
+    -   Also learning how to apply JavaScript functions was a challenge
 
 ## Installation
 
-It is required to install Node.js to your machine to run this program. Here is how to do it:<br> 
+It is required to install Node.js to your machine to run this program. Here is how to do it:<br>
 <br>
 **For MacOS - using Bash**<br>
-```
+
+````
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```<br>
 <br>
 **For MacOS - using Homebrew**<br>
-```
+````
+
 brew install node
+
 ```<br>
 <br>
 <br>
 **For Windows - using Scoop**<br>
 ```
+
 scoop install nodejs
+
 ```<br>
 *or*<br>
 ```
+
 scoop install nodejs-lts
+
 ```<br>
 <br>
 <br>
 **For Linux - Alpine**<br>
 ```
+
 apk add nodejs npm
+
 ```<br>
 <br>
 **Arch Linux**<br>
 ```
+
 pacman -S nodejs npm
+
 ```<br>
 <br>
 <br>
@@ -51,7 +61,9 @@ Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 - Once cloned, open 'readme_app' in your IDE of choice (I use [VSCode](https://code.visualstudio.com/)).
 - In the Terminal window, run:
 ```
+
 node inquirer.mjs
+
 ```
 - Follow the prompts and BOOM. README created.
 
@@ -62,7 +74,9 @@ Here are some screenshots of how to navigate the program:
 <br>
 Start with this
 ```
+
 node inquirer.mjs
+
 ```<br>
 ![demo](./assets/images/readme-demo1.png)
 ![demo](./assets/images/readme-demo2.png)
@@ -99,3 +113,4 @@ Please refer to the [Contributor Covenant](https://www.contributor-covenant.org/
 
 
 
+```
