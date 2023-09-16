@@ -41,7 +41,7 @@ Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 Here are some screenshots of how to navigate the program:
 
 ### Start here
-
+#### Run this in your Terminal
 ```bash
 node inquirer.mjs
 ```
