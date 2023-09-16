@@ -59,7 +59,6 @@ node inquirer.mjs
 <br>
 ![demo](./assets/images/demo-ss3.png)<br>
 <br>
-<br>
 #### README.html created!!
 ![demo](./assets/images/demo-ss4.png)
 
