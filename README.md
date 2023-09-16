@@ -42,14 +42,10 @@ Here are some screenshots of how to navigate the program:
 
 ### Start here
 #### Run this in your Terminal
-```bash
-node inquirer.mjs
-```
+![demo](./assets/images/demo-ss1.png)
 
 #### Prompts in the terminal:
 
-![demo](./assets/images/demo-ss1.png)<br>
-<br>
 ![demo](./assets/images/demo-ss2.png)<br>
 <br>
 ![demo](./assets/images/demo-ss3.png)<br>
