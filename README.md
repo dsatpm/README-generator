@@ -53,15 +53,15 @@ node inquirer.mjs
 
 #### Prompts in the terminal:
 
-![demo](./assets/images/readme-demo1.png)
-![demo](./assets/images/readme-demo2.png)
-![demo](./assets/images/readme-demo3.png)
+![demo](./assets/images/demo-ss1.png)
+![demo](./assets/images/demo-ss2.png)
+![demo](./assets/images/demo-ss3.png)
 
 #### README.html created!!
-![demo](./assets/images/readme-demo4.png)
+![demo](./assets/images/demo-ss4.png)
 
 #### Finished product!
-![demo](./assets/images/readme-demo5.png)
+![demo](./assets/images/demo-ss5.png)
 
 #### Live Demo
 [Here](https://drive.google.com/file/d/1DgSio52Ks6uMFiYB8Tc56bQmKz0CbDDR/view?usp=drive_link) is the video demo.
