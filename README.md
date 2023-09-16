@@ -1,6 +1,6 @@
 # README Generator
 
-This is a program that creates a professional README in an HTML file that is created entirely from Node.js. Answer the series of prompts, and your README will be generated automatically!
+This is a program that creates a professional README in an HTML file that is created entirely from Node.js. Answer the series of prompts, and your README will be generated automatically! [Here](https://dsatpm.github.io/readme_app/) is the deployed project. It is deployed as just the README.md file. Use Node.js to run the program :)
 
 -   I wanted to create a nice looking README generator that was very user-friendly
 -   I built this project to streamline the sometimes tedious task of creating a README for a project
