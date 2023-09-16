@@ -53,9 +53,9 @@ node inquirer.mjs
 
 #### Prompts in the terminal:
 
-![demo](./assets/images/demo-ss1.png)
-![demo](./assets/images/demo-ss2.png)
-![demo](./assets/images/demo-ss3.png)
+![demo](./assets/images/demo-ss1.png)<br>
+![demo](./assets/images/demo-ss2.png)<br>
+![demo](./assets/images/demo-ss3.png)<br>
 
 #### README.html created!!
 ![demo](./assets/images/demo-ss4.png)
