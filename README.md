@@ -42,6 +42,7 @@ Here are some screenshots of how to navigate the program:
 
 ### Start here
 #### Run this in your Terminal
+(The command with the `$`)
 ![demo](./assets/images/demo-ss1.png)
 
 #### Prompts in the terminal:
