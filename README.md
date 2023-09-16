@@ -15,30 +15,44 @@ This is a program that creates a professional README in an HTML file that is cre
 It is required to install Node.js to your machine to run this program. Here is how to do it:<br> 
 <br>
 **For MacOS - using Bash**<br>
-```curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"```<br>
+```bash
+curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
+```<br>
 <br>
 **For MacOS - using Homebrew**<br>
-```brew install node```<br>
+```bash
+brew install node
+```<br>
 <br>
 <br>
 **For Windows - using Scoop**<br>
-```scoop install nodejs```<br>
+```bash
+scoop install nodejs
+```<br>
 *or*<br>
-```scoop install nodejs-lts```<br>
+```bash
+scoop install nodejs-lts
+```<br>
 <br>
 <br>
 **For Linux - Alpine**<br>
-```apk add nodejs npm```<br>
+```bash
+apk add nodejs npm
+```<br>
 <br>
 **Arch Linux**<br>
-```pacman -S nodejs npm```<br>
+```bash
+pacman -S nodejs npm
+```<br>
 <br>
 <br>
 Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 - Click on the green 'Code' icon and copy the URL *or* SSH Key. Information on how to do that can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 - Once cloned, open 'readme_app' in your IDE of choice (I use [VSCode](https://code.visualstudio.com/)).
 - In the Terminal window, run:
-`node inquirer.mjs`
+```bash
+node inquirer.mjs
+```
 - Follow the prompts and BOOM. README created.
 
 
@@ -47,7 +61,9 @@ Next, copy my application by going [here](https://github.com/dsatpm/readme_app).
 Here are some screenshots of how to navigate the program:
 <br>
 Start with this
-```node inquirer.mjs```<br>
+```bash
+node inquirer.mjs
+```<br>
 ![demo](./assets/images/readme-demo1.png)
 ![demo](./assets/images/readme-demo2.png)
 ![demo](./assets/images/readme-demo3.png)
